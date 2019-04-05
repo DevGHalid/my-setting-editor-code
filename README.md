@@ -29,23 +29,34 @@ My setting editor code
 <h1>Setting vim</h1>
 
 <p>
-call plug#begin('~/.vim/plugged')
-
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Valloric/YouCompleteMe'
-Plug 'airblade/vim-gitgutter'
-Plug 'kien/ctrlp.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'mattn/emmet-vim'
-Plug 'tomasiser/vim-code-dark'
-
+call plug#begin()
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    Plug 'airblade/vim-gitgutter'
+    Plug 'kien/ctrlp.vim'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'mattn/emmet-vim'
+    Plug 'Valloric/YouCompleteMe'
+    Plug 'itchyny/lightline.vim'
+    Plug 'terryma/vim-multiple-cursors'
+    Plug 'tpope/vim-eunuch'
+    Plug 'morhetz/gruvbox'
 call plug#end()
 
-let g:user_emmet_leader_key='<C-Z>'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+let g:deoplete#enable_at_startup = 1
 
 set t_Co=256
 set t_ut=
-colorscheme codedark
+colorscheme gruvbox 
 
 set number
 set expandtab
@@ -73,5 +84,4 @@ function! WinMove(key)
     exec "wincmd ".a:key
   endif
 endfunction
-
 </p>
