@@ -12,6 +12,8 @@ My setting editor code
     "editor.fontFamily": "",
     "window.menuBarVisibility": "toggle",
     "editor.tabSize": 2,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 2,
     "editor.wordWrap": "on",
     "editor.minimap.enabled": false,
     "zenMode.hideTabs": false,
@@ -30,33 +32,20 @@ My setting editor code
 
 <p>
 call plug#begin()
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-    Plug 'airblade/vim-gitgutter'
-    Plug 'kien/ctrlp.vim'
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'mattn/emmet-vim'
-    Plug 'Valloric/YouCompleteMe'
-    Plug 'itchyny/lightline.vim'
-    Plug 'terryma/vim-multiple-cursors'
-    Plug 'tpope/vim-eunuch'
-    Plug 'morhetz/gruvbox'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'airblade/vim-gitgutter'
+Plug 'kien/ctrlp.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mattn/emmet-vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'itchyny/lightline.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-eunuch'
+Plug 'morhetz/gruvbox'
+Plug 'digitaltoad/vim-pug'
 call plug#end()
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-let g:deoplete#enable_at_startup = 1
-
-set t_Co=256
-set t_ut=
-colorscheme gruvbox 
 
 set number
 set expandtab
