@@ -31,6 +31,7 @@ My setting editor code
 <h1>Setting vim</h1>
 
 <p>
+    "plug
 call plug#begin()
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -39,14 +40,42 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kien/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
-Plug 'Valloric/YouCompleteMe'
 Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-eunuch'
 Plug 'morhetz/gruvbox'
 Plug 'digitaltoad/vim-pug'
+Plug 'alvan/vim-closetag'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+"themes
+Plug 'arcticicestudio/nord-vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'mxw/vim-jsx'
+
 call plug#end()
 
+colorscheme nord
+
+"let
+let g:closetag_filenames = '*.html,*.xml,*.php,*.js,*.ejs,*.jsx,*.ts,*.tsx,*.vue'
+let g:prettier#exec_cmd_async = 1
+let g:deoplete#enable_at_startup = 1
+
+"emmet
+let g:user_emmet_leader_key='<C-Z>'
+
+"set
 set number
 set expandtab
 set tabstop=2
@@ -54,6 +83,7 @@ set shiftwidth=2
 set smarttab
 set smartindent
 
+"map
 map <C-e> :NERDTreeToggle<CR>
 
 map <silent> <C-h> :call WinMove("h")<CR>
@@ -73,4 +103,5 @@ function! WinMove(key)
     exec "wincmd ".a:key
   endif
 endfunction
+
 </p>
