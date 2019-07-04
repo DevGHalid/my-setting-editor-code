@@ -31,7 +31,7 @@ My setting editor code
 <h1>Setting vim</h1>
 
 <p>
-    "plug
+   "plug
 call plug#begin()
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -43,12 +43,15 @@ Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-eunuch'
-Plug 'morhetz/gruvbox'
 Plug 'digitaltoad/vim-pug'
 Plug 'alvan/vim-closetag'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'leafgarland/typescript-vim'
+Plug 'mxw/vim-jsx'
+Plug 'burner/vim-svelte'
+Plug 'posva/vim-vue'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -59,13 +62,18 @@ else
 endif
 
 "themes
+"Plug 'NLKNguyen/papercolor-theme'
 Plug 'arcticicestudio/nord-vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'mxw/vim-jsx'
+"Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
-colorscheme nord
+colorscheme nord 
+"let g:solarized_termcolors=256
+"colorscheme jellybeans
+
+"set background=dark
+"colorscheme solarized
 
 "let
 let g:closetag_filenames = '*.html,*.xml,*.php,*.js,*.ejs,*.jsx,*.ts,*.tsx,*.vue'
@@ -103,5 +111,15 @@ function! WinMove(key)
     exec "wincmd ".a:key
   endif
 endfunction
+
+execute pathogen#infect()
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 </p>
