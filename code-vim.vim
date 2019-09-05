@@ -21,8 +21,8 @@ Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 "themes
-"Plug 'arcticicestudio/nord-vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'arcticicestudio/nord-vim'
+"Plug 'altercation/vim-colors-solarized'
 
 "js
 Plug 'prettier/vim-prettier', {
@@ -38,9 +38,9 @@ Plug 'evidens/vim-twig'
 call plug#end()
 
 "apply themes
-syntax enable
-set background=dark
-colorscheme solarized
+" syntax enable
+" set background=dark
+colorscheme nord
 
 "let
 let g:closetag_filenames = '*.html,*.xml,*.php,*.js,*.ejs,*.jsx,*.tsx,*.vue'
@@ -86,3 +86,6 @@ function! WinMove(key)
     exec "wincmd ".a:key
   endif
 endfunction
+
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
