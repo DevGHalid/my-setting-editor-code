@@ -19,15 +19,19 @@ Plug 'w0rp/ale'
 
 "autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"for centos 'pip3 install --user pynvim'
 
 "themes
-Plug 'arcticicestudio/nord-vim'
+"Plug 'nanotech/jellybeans.vim'
+"Plug 'owickstrom/vim-colors-paramount'
+ Plug 'arcticicestudio/nord-vim'
 "Plug 'altercation/vim-colors-solarized'
+
 
 "js
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'html', 'twig'] }
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'html', 'twig', 'php'] }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'posva/vim-vue'
@@ -37,10 +41,11 @@ Plug 'evidens/vim-twig'
 
 call plug#end()
 
-"apply themes
-" syntax enable
-" set background=dark
 colorscheme nord
+"colorscheme paramount
+
+"colorscheme jellybeans
+"set background=dark
 
 "let
 let g:closetag_filenames = '*.html,*.xml,*.php,*.js,*.ejs,*.jsx,*.tsx,*.vue'
@@ -86,6 +91,3 @@ function! WinMove(key)
     exec "wincmd ".a:key
   endif
 endfunction
-
-autocmd InsertEnter * set cul
-autocmd InsertLeave * set nocul
