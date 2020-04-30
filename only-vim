@@ -2,15 +2,17 @@ call plug#begin()
 
 Plug 'vim-scripts/AutoComplPop'
 
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
 Plug 'airblade/vim-gitgutter'
 Plug 'kien/ctrlp.vim'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
 
 Plug 'terryma/vim-multiple-cursors'
 Plug 'digitaltoad/vim-pug'
-Plug 'alvan/vim-closetag'
+" Plug 'alvan/vim-closetag'
 Plug 'leafgarland/typescript-vim'
 
 "plugin commentary - gc
@@ -19,11 +21,17 @@ Plug 'tpope/vim-commentary'
 "linter
 Plug 'w0rp/ale'
 
+"css
+Plug 'cakebaker/scss-syntax.vim'
+
 "js
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'html', 'twig', 'php'] }
+  \ 'branch': 'release/1.x',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'html', 'twig', 'php', 'yaml'] }
+
 Plug 'mustache/vim-mustache-handlebars'
+"Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'posva/vim-vue'
 
@@ -32,12 +40,18 @@ Plug 'evidens/vim-twig'
 
 "themes
 Plug 'arcticicestudio/nord-vim' 
+"Plug 'tyrannicaltoucan/vim-deep-space'
+"Plug 'drewtempelmeyer/palenight.vim'
+
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
 "colorschema
 colorscheme nord
-
+"set background=dark
+" set termguicolors
+" set t_Co=256
 
 "let
 let g:closetag_filenames = '*.html,*.xml,*.php,*.js,*.ejs,*.jsx,*.tsx,*.vue'
