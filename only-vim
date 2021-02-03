@@ -26,8 +26,7 @@ Plug 'cakebaker/scss-syntax.vim'
 
 "js
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'branch': 'release/1.x',
+  \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'html', 'twig', 'php', 'yaml'] }
 
 Plug 'mustache/vim-mustache-handlebars'
@@ -38,20 +37,11 @@ Plug 'posva/vim-vue'
 "php
 Plug 'evidens/vim-twig'
 
-"themes
-Plug 'arcticicestudio/nord-vim' 
-"Plug 'tyrannicaltoucan/vim-deep-space'
-"Plug 'drewtempelmeyer/palenight.vim'
-
 Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
-"colorschema
-colorscheme nord
-"set background=dark
-" set termguicolors
-" set t_Co=256
+set background=dark
 
 "let
 let g:closetag_filenames = '*.html,*.xml,*.php,*.js,*.ejs,*.jsx,*.tsx,*.vue'
@@ -69,6 +59,8 @@ let b:ale_linters = ['flake8', 'pylint']
 "emmet
 let g:user_emmet_leader_key='<C-Z>'
 
+let g:ctrlp_custom_ignore = 'node_modules\|vendor\|DS_Store\|git'
+
 "set
 set number
 set expandtab
@@ -76,24 +68,7 @@ set tabstop=2
 set shiftwidth=2
 set smarttab
 set smartindent
+set noswapfile
 
 "map
 map <C-e> :NERDTreeToggle<CR>
-
-map <silent> <C-h> :call WinMove("h")<CR>
-map <silent> <C-j> :call WinMove("j")<CR>
-map <silent> <C-k> :call WinMove("k")<CR>
-map <silent> <C-l> :call WinMove("l")<CR>
-
-function! WinMove(key)
-  let t:curwin = winnr()
-  exec "wincmd ".a:key
-  if (t:curwin == winnr())
-    if (match(a:key, '[jk]'))
-      wincmd v
-    else
-      wincmd s
-    endif
-    exec "wincmd ".a:key
-  endif
-endfunction
