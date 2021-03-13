@@ -24,7 +24,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "themes
 "Plug 'nanotech/jellybeans.vim'
 "Plug 'owickstrom/vim-colors-paramount'
- Plug 'arcticicestudio/nord-vim'
+"Plug 'arcticicestudio/nord-vim'
 "Plug 'altercation/vim-colors-solarized'
 
 
@@ -41,7 +41,7 @@ Plug 'evidens/vim-twig'
 
 call plug#end()
 
-colorscheme nord
+"colorscheme nord
 "colorscheme paramount
 
 "colorscheme jellybeans
@@ -51,6 +51,8 @@ colorscheme nord
 let g:closetag_filenames = '*.html,*.xml,*.php,*.js,*.ejs,*.jsx,*.tsx,*.vue'
 let g:prettier#exec_cmd_async = 1
 let g:deoplete#enable_at_startup = 1
+
+let g:ctrlp_custom_ignore = 'node_modules\|vendor\|DS_Store\|git'
 
 "linter
 let g:ale_fixers = {'javascript': ['eslint']}
