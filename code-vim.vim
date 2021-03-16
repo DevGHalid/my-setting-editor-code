@@ -62,6 +62,8 @@ let g:ale_fix_on_save = 1
 
 let b:ale_linters = ['flake8', 'pylint']
 
+let g:ctrlp_show_hidden = 1
+
 "emmet
 let g:user_emmet_leader_key='<C-Z>'
 
