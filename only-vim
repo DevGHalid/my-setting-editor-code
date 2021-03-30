@@ -47,6 +47,7 @@ set background=dark
 let g:closetag_filenames = '*.html,*.xml,*.php,*.js,*.ejs,*.jsx,*.tsx,*.vue'
 let g:prettier#exec_cmd_async = 1
 let g:deoplete#enable_at_startup = 1
+let NERDTreeShowHidden=1
 
 "linter
 let g:ale_fixers = {'javascript': ['eslint']}
